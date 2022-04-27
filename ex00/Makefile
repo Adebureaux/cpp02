@@ -11,16 +11,19 @@ CFLAGS      = -Wall -Wextra -Werror -std=c++98
 COMPILER    = c++
 
 ${NAME}: ${OBJS}
-		${COMPILER} ${CFLAGS} ${OBJS} -o ${NAME}
+	${COMPILER} ${CFLAGS} ${OBJS} -o ${NAME}
 
-all :   ${NAME}
+%.o: %.cpp
+	$(COMPILER) $(CFLAGS) -c $< -o $@
+
+all: ${NAME}
 
 clean:
-		${RM} ${OBJS}
+	${RM} ${OBJS}
 
 fclean: clean
-		${RM} ${NAME}
+	${RM} ${NAME}
 
-re:        fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
