@@ -23,5 +23,7 @@ int main(void)
 	check_bsp(bsp(a, b, c, Point(1, 1.5)), true);
 	check_bsp(bsp(a, b, c, Point(0, 1)), false);
 	check_bsp(bsp(a, b, c, Point(1.5, 1)), false);
+	check_bsp(bsp(a, b, c, Point(0.69, 2.03)), false);
+	check_bsp(bsp(a, b, c, Point(0.70, 2.03)), true);
 	return (0);
 }

@@ -4,7 +4,7 @@ float	calcArea(const Point a, const Point b, const Point c)
 {
 	Fixed	fixed;
 
-	fixed = (a._x - c._x) * (b._y - c._y) - (b._x - c._x) * (a._y - c._y);
+	fixed = (a.getX() - c.getX()) * (b.getY() - c.getY()) - (b.getX() - c.getX()) * (a.getY() - c.getY());
 	return (fixed.toFloat());
 }
 
